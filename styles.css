@@ -41,14 +41,10 @@ h1 {
 .square,
 .square_color_change {
   flex-grow: 1;
-  flex-shrink: 1;
+  flex: 1 1 calc(6.25%);
   height: auto;
 }
 
 .square {
   background-color: white;
-}
-
-.container .square_color_change {
-  background-color: aqua;
 }

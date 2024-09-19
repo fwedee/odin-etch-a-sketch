@@ -13,11 +13,12 @@ function generateGrid(size) {
   }
 
   let grids = document.querySelectorAll(".square");
-
+  let colorBackground = getRandomColor();
   // Addition of evenListeners to grid
   grids.forEach((grid) => {
     grid.addEventListener("mouseover", () => {
       grid.classList.add("square_color_change");
+      grid.style.background = colorBackground;
     });
     grid.addEventListener("mouseleave", () => {
       //grid.classList.remove("square_color_change");
@@ -42,7 +43,17 @@ function clearGrid() {
 
   gridsColored.forEach((grid) => {
     grid.classList.remove("square_color_change");
+    grid.style.background = "white";
   });
+}
+
+function getRandomColor() {
+  var letters = "0123456789ABCDEF";
+  var color = "#";
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
 }
 
 sizeButton.addEventListener("click", () => {
