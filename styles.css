@@ -13,23 +13,40 @@ body {
 h1 {
   text-align: center;
 }
+.size,
+.delete {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 5px 10px 5px 10px;
+  font-weight: bold;
+  background-color: blue;
+  color: white;
+  border: 0px;
+}
+
+.size {
+  margin-left: 44%;
+}
 
 .container {
   display: flex;
   margin: 0 auto;
-  max-width: 1200px;
-  padding: 20px;
+  max-width: 960px;
+  height: 650px;
+  padding: 2px;
   flex-wrap: wrap;
+  background-color: black;
 }
 
 .square,
 .square_color_change {
-  flex: 1 1 calc(6.25%);
-  height: 40px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  height: auto;
 }
 
 .square {
-  background-color: green;
+  background-color: white;
 }
 
 .container .square_color_change {
