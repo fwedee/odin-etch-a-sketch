@@ -46,7 +46,20 @@ function clearGrid() {
 }
 
 sizeButton.addEventListener("click", () => {
-  let sizeGrid = parseInt(prompt("Enter the desired size of the grid: "));
+  let sizeGrid;
+  while (true) {
+    sizeGrid = parseInt(prompt("Enter the desired size of the grid: "));
+    if (
+      sizeGrid > 0 &&
+      sizeGrid < 100 &&
+      typeof sizeGrid == "number" &&
+      sizeGrid % 1 == 0
+    ) {
+      break;
+    } else {
+      alert("An error ocurred. Please input a positiv integer under 100.");
+    }
+  }
   deleteGrid();
   generateGrid(sizeGrid);
 });
